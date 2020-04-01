@@ -21,7 +21,6 @@ public class CustomerController {
 
 	@InitBinder
 	public void initBinder(WebDataBinder databinder) {
-
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		databinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}
@@ -34,9 +33,6 @@ public class CustomerController {
 
 	@RequestMapping("/processForm")
 	public String processForm(@Valid @ModelAttribute("customer") Customer customer, BindingResult bindingResult) {
-
-		// checking white space issue
-		System.out.println("Last Name : " + "|" + customer.getLastName() + "|");
 
 		if (bindingResult.hasErrors()) {
 			return "customer-form";
