@@ -14,7 +14,7 @@ import javax.validation.Payload;
 public @interface CourseCode {
 
 	// define default course code
-	public String value() default "LUV";
+	public String[] value() default {"LUV"};
 
 	// define default error code
 	public String message() default "Course code must starts with LUV";
